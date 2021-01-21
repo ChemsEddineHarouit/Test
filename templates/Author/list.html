@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        </style>
+</head>
+<body>
+
+<h1>Author list</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Birth date</th>
+            <th>Detail</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for a in object_list %}
+        <tr>
+            <td>{{a.name}}</td>
+            <td>{{a.birth_date}}</td>
+            <td><a href="{{a.get_absolute_url}}">Detail</a></td>
+            <td><a href="{{a.get_update_url}}">Update</a></td>
+            <td><a href="{{a.get_delete_url}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<a href="{% url 'author:create'%}">Create a new author</a>
+
+
+</body>
+</html>

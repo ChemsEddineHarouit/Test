@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Author Detail</h1>
+
+    <p>Name: {{object.name}}</p>
+    <p>Birth date: {{object.birth_date}}</p>
+</table>
+
+<a href="{% url 'author:list'%}">Back to List</a>
+
+{% include "Book/list_owner.html" with object_list=books %}
+
+<a href="{{object.get_create_book_url}}">New book</a>
+
+
+</body>
+</html>

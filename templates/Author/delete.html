@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Author Delete</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        Are you sure to delete the Author: {{object}}?
+        <br>
+        <button type="submit">Delete</button>
+    </form>
+
+</body>
+</html>
